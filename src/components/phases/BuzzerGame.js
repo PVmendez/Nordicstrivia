@@ -15,6 +15,13 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
   const [playerScores, setPlayerScores] = useState({});
   const [sessionIdState, setSessionIdState] = useState(sessionId || null);
 
+  // Actualizar sessionIdState cuando sessionId prop cambia
+  useEffect(() => {
+    if (sessionId) {
+      setSessionIdState(sessionId);
+    }
+  }, [sessionId]);
+
   // El gameId se calcula dinamicamente basado en sessionIdState actual
   const gameId = sessionIdState ? `game-${sessionIdState}` : null;
 
@@ -26,6 +33,9 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
     const params = new URLSearchParams(window.location.search);
     return params.get('player');
   });
+
+  // Parámetro game es solo informativo, no restrictivo
+  const [gameValidationError] = useState(null);
 
   const isAdmin = !currentPlayerName;
   const [showLinkModal, setShowLinkModal] = useState(false);
@@ -42,10 +52,10 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
     });
   }, [sessionIdState, gameId, isAdmin, gamePlayers, gameData, currentPlayerName]);
 
-  // Si tiene sessionId, cargar jugadores desde Firebase
+  // Si tiene sessionIdState, cargar jugadores desde Firebase
   useEffect(() => {
-    if (sessionId) {
-      const unsubscribe = getPlayersFromFirebase(sessionId, (fetchedPlayers) => {
+    if (sessionIdState) {
+      const unsubscribe = getPlayersFromFirebase(sessionIdState, (fetchedPlayers) => {
         if (fetchedPlayers) {
           // Agregar score inicial a los jugadores
           const playersWithScore = fetchedPlayers.map(p => ({
@@ -75,7 +85,7 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
         }, {})
       );
     }
-  }, [sessionId, players]);
+  }, [sessionIdState, players]);
 
   // Inicializar fase
   useEffect(() => {
@@ -203,7 +213,7 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
   const getPlayerLink = (playerName) => {
     if (!sessionIdState) return '';
     const baseUrl = window.location.origin + window.location.pathname;
-    return `${baseUrl}?player=${encodeURIComponent(playerName)}&session=${sessionIdState}`;
+    return `${baseUrl}?player=${encodeURIComponent(playerName)}&session=${sessionIdState}&game=3`;
   };
 
   const copyToClipboard = (text) => {

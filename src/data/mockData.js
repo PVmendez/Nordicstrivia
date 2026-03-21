@@ -660,3 +660,152 @@ export const whoSaidThis = [
     author: "Dani"
   }
 ];
+
+// ZOOM GUESS GAME - Imágenes para adivinar
+export const zoomGuessImages = [
+  {
+    id: 1,
+    fileName: "IMG-20221219-WA0041.jpg",
+    hint: "Imagen 1"
+  },
+  {
+    id: 2,
+    fileName: "IMG-20230413-WA0002.jpg",
+    hint: "Imagen 2"
+  },
+  {
+    id: 3,
+    fileName: "IMG-20230619-WA0101.jpg",
+    hint: "Imagen 3"
+  },
+  {
+    id: 4,
+    fileName: "IMG-20230720-WA0045.jpg",
+    hint: "Imagen 4"
+  },
+  {
+    id: 5,
+    fileName: "IMG-20230813-WA0013 (1).jpg",
+    hint: "Imagen 5"
+  },
+  {
+    id: 6,
+    fileName: "IMG-20231110-WA0008.jpg",
+    hint: "Imagen 6"
+  },
+  {
+    id: 7,
+    fileName: "IMG-20240530-WA0058.jpg",
+    hint: "Imagen 7"
+  },
+  {
+    id: 8,
+    fileName: "IMG-20240616-WA0066.jpg",
+    hint: "Imagen 8"
+  },
+  {
+    id: 9,
+    fileName: "IMG-20241116-WA0036.jpg",
+    hint: "Imagen 9"
+  },
+  {
+    id: 10,
+    fileName: "IMG-20250125-WA0002.jpg",
+    hint: "Imagen 10"
+  },
+  {
+    id: 11,
+    fileName: "IMG-20250209-WA0144.jpg",
+    hint: "Imagen 11"
+  },
+  {
+    id: 12,
+    fileName: "IMG-20250228-WA0026.jpg",
+    hint: "Imagen 12"
+  },
+  {
+    id: 13,
+    fileName: "IMG-20250328-WA0005.jpg",
+    hint: "Imagen 13"
+  },
+  {
+    id: 14,
+    fileName: "IMG-20250509-WA0022.jpg",
+    hint: "Imagen 14"
+  },
+  {
+    id: 15,
+    fileName: "IMG-20250726-WA0024.jpg",
+    hint: "Imagen 15"
+  },
+  {
+    id: 16,
+    fileName: "IMG-20220226_002149.jpg",
+    hint: "Imagen 16"
+  },
+  {
+    id: 17,
+    fileName: "IMG-20221106_001612.jpg",
+    hint: "Imagen 17"
+  },
+  {
+    id: 18,
+    fileName: "IMG-20221218_195203.jpg",
+    hint: "Imagen 18"
+  },
+  {
+    id: 19,
+    fileName: "IMG-20230511_222612.jpg",
+    hint: "Imagen 19"
+  },
+  {
+    id: 20,
+    fileName: "IMG-20230619_111822.jpg",
+    hint: "Imagen 20"
+  },
+  {
+    id: 21,
+    fileName: "IMG-20250125_080111.jpg",
+    hint: "Imagen 21"
+  },
+  {
+    id: 22,
+    fileName: "20250125_053212.jpg",
+    hint: "Imagen 22"
+  },
+  {
+    id: 23,
+    fileName: "20250126_185849.jpg",
+    hint: "Imagen 23"
+  },
+  {
+    id: 24,
+    fileName: "20251026_181920.jpg",
+    hint: "Imagen 24"
+  },
+  {
+    id: 25,
+    fileName: "20251109_212620.jpg",
+    hint: "Imagen 25"
+  },
+  {
+    id: 26,
+    fileName: "866c03d7-a84c-4616-8fdc-1c7a134af510.jpg",
+    hint: "Imagen 26"
+  },
+  {
+    id: 27,
+    fileName: "IMG-20251104-WA0000.jpg",
+    hint: "Imagen 27"
+  },
+  {
+    id: 28,
+    fileName: "IMG_1331.HEIC",
+    hint: "Imagen 28"
+  },
+  {
+    id: 29,
+    fileName: "IMG_1479.HEIC",
+    hint: "Imagen 29"
+  }
+];

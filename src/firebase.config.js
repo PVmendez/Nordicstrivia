@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, onValue, set, update, remove } from 'firebase/database';
+import { getDatabase, ref, onValue, set, update, remove, get } from 'firebase/database';
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -15,7 +15,7 @@ const app = initializeApp(firebaseConfig);
 export const db = getDatabase(app);
 
 // Funciones auxiliares para Firebase
-export const createGame = async (gameId, players, question, quoteIndex = 0) => {
+export const createGame = async (gameId, players, question, quoteIndex = 0, currentZoomLevel = 1, currentImageIndex = 0) => {
   const gameRef = ref(db, `games/${gameId}`);
   const playersList = {};
   
@@ -38,12 +38,14 @@ export const createGame = async (gameId, players, question, quoteIndex = 0) => {
     status: 'waiting', // waiting, locked, answered, finished
     winner: null,
     currentQuoteIndex: quoteIndex,
+    currentZoomLevel,
+    currentImageIndex,
     blockedPlayers: {}, // Jugadores que erraron en esta ronda
     createdAt: new Date().toISOString()
   });
 };
 
-export const updateGameQuestion = async (gameId, players, question, quoteIndex, blockedPlayerId = null) => {
+export const updateGameQuestion = async (gameId, players, question, quoteIndex, blockedPlayerId = null, currentZoomLevel = null, currentImageIndex = null) => {
   const gameRef = ref(db, `games/${gameId}`);
   const playersList = {};
   const blockedPlayers = {};
@@ -66,13 +68,55 @@ export const updateGameQuestion = async (gameId, players, question, quoteIndex, 
     blockedPlayers[blockedPlayerId] = true;
   }
 
-  await update(gameRef, {
+  const updateData = {
     question,
     currentQuoteIndex: quoteIndex,
     players: playersList,
     status: 'waiting',
     winner: null,
     blockedPlayers: blockedPlayers
+  };
+
+  // Agregar zoom level e image index si se proporcionan
+  if (currentZoomLevel !== null) {
+    updateData.currentZoomLevel = currentZoomLevel;
+  }
+  if (currentImageIndex !== null) {
+    updateData.currentImageIndex = currentImageIndex;
+  }
+
+  await update(gameRef, updateData);
+};
+
+// Actualizar solo el estado del juego sin tocar los scores de los jugadores
+export const resetGameStateForNextLevel = async (gameId, currentZoomLevel, currentImageIndex) => {
+  const gameRef = ref(db, `games/${gameId}`);
+  
+  // Obtener estado actual
+  const snapshot = await get(gameRef);
+  if (!snapshot.exists()) return;
+  
+  const gameData = snapshot.val();
+  const updatedPlayers = {};
+  
+  // Resetear pressed de todos los jugadores pero mantener sus scores
+  Object.values(gameData.players).forEach(player => {
+    updatedPlayers[player.id] = {
+      ...player,
+      pressed: false,
+      pressedAt: null,
+      answered: false,
+      correct: null
+      // El score se mantiene intacto
+    };
+  });
+
+  await update(gameRef, {
+    players: updatedPlayers,
+    status: 'waiting',
+    winner: null,
+    currentZoomLevel,
+    currentImageIndex
   });
 };
 

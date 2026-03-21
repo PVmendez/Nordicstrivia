@@ -3,9 +3,10 @@ import { useTournament } from '../context/TournamentContext';
 import PasapalabrasGame from './phases/PasapalabrasGame';
 import NordicosDicenGame from './phases/NordicosDicenGame';
 import BuzzerGame from './phases/BuzzerGame';
+import ZoomGuessGame from './phases/ZoomGuessGame';
 import TeamSetup from './TeamSetup';
 import GlobalScoreBoard from './GlobalScoreBoard';
-import { FaListUl, FaMicrophone, FaLock, FaCheckCircle, FaHandPaper } from 'react-icons/fa';
+import { FaListUl, FaMicrophone, FaLock, FaCheckCircle, FaHandPaper, FaImage } from 'react-icons/fa';
 import '../styles/PhaseManager.css';
 
 const PhaseManager = () => {
@@ -65,6 +66,10 @@ const PhaseManager = () => {
       // ¿Quién dijo esto? - Buzzer
       return <BuzzerGame players={players} onPhaseComplete={() => handlePhaseComplete(3)} />;
     }
+    if (currentPhase === 4) {
+      // Adivinar con Zoom - Progresive Image Guessing
+      return <ZoomGuessGame players={players} onPhaseComplete={() => handlePhaseComplete(4)} />;
+    }
     // Future phases will be added here
     return <div className="phase-placeholder">Fase {currentPhase} - Próximamente</div>;
   };
@@ -114,12 +119,14 @@ const PhaseManager = () => {
             </button>
 
             <button
-              className="phase-btn phase-4 disabled"
-              disabled
+              className={`phase-btn phase-4 ${completedPhases.has(4) ? 'completed' : 'active'}`}
+              onClick={() => handleStartPhase(4)}
             >
               <div className="phase-number">Fase 4</div>
-              <div className="phase-name">Próximamente</div>
-              <div className="phase-icon"><FaLock /></div>
+              <div className="phase-name">Adivinar con Zoom</div>
+              <div className="phase-icon">
+                {completedPhases.has(4) ? <FaCheckCircle /> : <FaImage />}
+              </div>
             </button>
           </div>
 
