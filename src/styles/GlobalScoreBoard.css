@@ -1,0 +1,201 @@
+.global-scoreboard {
+  width: 100%;
+  padding: 1.5rem 0;
+  animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scoreboard-container {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.scoreboard-header {
+  background: #2563eb;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.scoreboard-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.scoreboard-table {
+  overflow-x: auto;
+}
+
+.table-head {
+  display: grid;
+  grid-template-columns: 50px 1fr 80px 80px 80px 100px;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-bottom: 3px solid #ddd;
+  font-weight: 700;
+  color: #333;
+}
+
+.col {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.col-name {
+  text-align: left;
+}
+
+.col-position,
+.col-phase,
+.col-total {
+  text-align: center;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 50px 1fr 80px 80px 80px 100px;
+  gap: 1rem;
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.table-row:hover {
+  background: #f9f9f9;
+}
+
+.table-row.position-1 {
+  background: #fef3c7;
+}
+
+.table-row.position-2 {
+  background: #f3f4f6;
+}
+
+.table-row.position-3 {
+  background: #fed7aa;
+}
+
+.position-badge {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  width: 40px;
+}
+
+.position-badge .medal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medal.gold {
+  color: #f59e0b;
+  font-size: 1.8rem;
+}
+
+.medal.silver {
+  color: #9ca3af;
+  font-size: 1.8rem;
+}
+
+.medal.bronze {
+  color: #d97706;
+  font-size: 1.8rem;
+}
+
+.player-name {
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+}
+
+.has-score {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+.total-score {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+/* Modo compacto para la pantalla de fases */
+.global-scoreboard.compact {
+  padding: 0;
+}
+
+.global-scoreboard.compact .scoreboard-header {
+  padding: 1rem;
+}
+
+.global-scoreboard.compact .scoreboard-header h2 {
+  font-size: 1.2rem;
+}
+
+.global-scoreboard.compact .table-head {
+  grid-template-columns: 40px 1fr 70px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.global-scoreboard.compact .table-row {
+  grid-template-columns: 40px 1fr 70px;
+  padding: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.global-scoreboard.compact .col-phase {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .table-head {
+    grid-template-columns: 40px 1fr 60px 60px 60px 80px;
+    font-size: 0.85rem;
+    gap: 0.5rem;
+  }
+
+  .table-row {
+    grid-template-columns: 40px 1fr 60px 60px 60px 80px;
+    gap: 0.5rem;
+    padding: 0.8rem 0.5rem;
+  }
+
+  .col,
+  .col-name,
+  .col-position,
+  .col-phase,
+  .col-total {
+    padding: 0.3rem;
+  }
+
+  .scoreboard-header h2 {
+    font-size: 1.2rem;
+  }
+}

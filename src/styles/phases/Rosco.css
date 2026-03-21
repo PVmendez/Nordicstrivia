@@ -1,0 +1,134 @@
+.rosco-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.rosco {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rosco-letter {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.rosco-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.rosco {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e5e5;
+}
+
+/* Estados del rosco */
+.rosco-letter.pending {
+  background: #e5e7eb;
+  color: #6b7280;
+}
+
+.rosco-letter.correct {
+  background: #10b981;
+  color: white;
+  box-shadow: none;
+}
+
+.rosco-letter.incorrect {
+  background: #ef4444;
+  color: white;
+  box-shadow: none;
+}
+
+.rosco-letter.current:not(.correct):not(.incorrect) {
+  background: #f59e0b;
+  color: white;
+  animation: none;
+  box-shadow: none;
+  transform: scale(1.1);
+}
+
+.letter {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.rosco-center {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  border: 1px solid #e5e5e5;
+}
+
+.center-indicator {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+@media (max-width: 768px) {
+  .rosco {
+    width: 280px;
+    height: 280px;
+  }
+
+  .rosco-letter {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    transform-origin: center;
+  }
+
+  .rosco-letter[style*="translateY"] {
+    /* Esto es manejado en línea en el componente */
+  }
+
+  .rosco-container {
+    padding: 1rem;
+  }
+
+  .rosco-center {
+    width: 60px;
+    height: 60px;
+  }
+
+  .center-indicator {
+    font-size: 1.5rem;
+  }
+}

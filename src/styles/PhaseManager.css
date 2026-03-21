@@ -1,0 +1,166 @@
+.phase-manager {
+  width: 100%;
+  max-width: 1400px;
+  animation: slideUp 0.5s ease-out;
+}
+
+.phase-manager-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.phases-navigation {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.scoreboard-section {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  height: fit-content;
+}
+
+.phases-navigation h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
+.phases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.phase-btn {
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.phase-btn.active {
+  background: #2563eb;
+  border-color: transparent;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+}
+
+.phase-btn.active:hover {
+  background: #1d4ed8;
+  transform: none;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3);
+}
+
+.phase-btn.completed {
+  background: #10b981;
+  border-color: transparent;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  box-shadow: 0 1px 3px rgba(16, 185, 129, 0.3);
+}
+
+.phase-btn.completed:hover {
+  background: #059669;
+  transform: none;
+  box-shadow: 0 2px 5px rgba(16, 185, 129, 0.3);
+}
+
+.phase-btn.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.phase-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.phase-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.phase-icon {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phase-info {
+  background: #dbeafe;
+  padding: 1.5rem;
+  border-left: 3px solid #2563eb;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.phase-info h3 {
+  color: #2563eb;
+  margin-bottom: 0.5rem;
+}
+
+.phase-info p {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.phase-placeholder {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 1.2rem;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .phase-manager-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .phases-navigation {
+    padding: 1.5rem;
+  }
+
+  .scoreboard-section {
+    padding: 1.5rem;
+  }
+
+  .phases-grid {
+    gap: 1rem;
+  }
+}
