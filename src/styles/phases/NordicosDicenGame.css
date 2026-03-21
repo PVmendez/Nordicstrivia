@@ -1,97 +1,114 @@
 .nordicos-dicen-game {
   width: 100%;
   min-height: 100vh;
-  padding: 1rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
 }
 
 .game-header {
+  background: #000;
+  color: #fff;
+  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #d5d5d5;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
 .game-header h1 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin: 0;
+  font-weight: 700;
+  color: #fff;
 }
 
 .btn-scoreboard {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: white;
-  color: #667eea;
+  padding: 0.6rem 1.2rem;
+  background: #fff;
+  color: #000;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.2s;
   font-size: 0.9rem;
 }
 
 .btn-scoreboard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  color: #f9f9f9;
+  background: #f5f5f5;
 }
 
 .game-layout {
+  flex: 1;
+  padding: 1.5rem;
+  max-width: 1000px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .theme-section {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  background: #fafafa;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  padding: 1.5rem;
 }
 
 .theme-number {
-  color: #667eea;
+  color: #666;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
+  letter-spacing: 1px;
 }
 
 .theme-question {
-  color: #333;
-  font-size: 1.3rem;
+  color: #222;
+  font-size: 1.2rem;
   margin: 0;
-  line-height: 1.3;
+  line-height: 1.5;
+  font-weight: 700;
 }
 
 .boxes-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
 }
 
 .answer-box {
   aspect-ratio: 2;
-  border-radius: 12px;
+  border-radius: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   cursor: default;
-  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  border: 1px solid #d5d5d5;
 }
 
 .answer-box.hidden {
-  background: #667eea;
+  background: #000;
   color: white;
+  border: 1px solid #000;
 }
 
 .answer-box.hidden .question-mark {
-  font-size: 2.2rem;
+  font-size: 2rem;
   animation: bounce 2s infinite;
 }
 
@@ -100,30 +117,19 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
 .answer-box.revealed {
-  background: #4CAF50;
-  color: white;
-  animation: revealBox 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes revealBox {
-  0% {
-    transform: scale(0.8) rotateY(90deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) rotateY(0deg);
-    opacity: 1;
-  }
+  background: #f0fdf4;
+  color: #222;
+  border: 1px solid #d5d5d5;
 }
 
 .position {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.85rem;
+  color: #666;
   margin-bottom: 0.3rem;
 }
 
@@ -134,97 +140,99 @@
   text-align: center;
   max-height: 2rem;
   overflow: hidden;
+  color: inherit;
 }
 
 .percentage {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #666;
   margin-top: 0.3rem;
   font-weight: 700;
 }
 
 .game-controls-card {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .player-turn {
   padding: 0;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0;
   background: transparent;
   box-shadow: none;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.7rem;
+  border-bottom: 1px solid #d5d5d5;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .current-player {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
   margin-bottom: 0.3rem;
 }
 
 .current-player strong {
-  color: #667eea;
+  color: #000;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .team-indicator {
-  color: #999;
-  font-size: 0.9rem;
+  color: #666;
+  font-size: 0.85rem;
 }
 
 .progress {
   color: #666;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
 .answer-section {
-  background: transparent;
-  border-radius: 0;
-  padding: 0;
-  margin-bottom: 0.7rem;
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
   box-shadow: none;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 0.7rem;
+  border: 1px solid #d5d5d5;
 }
+
 .input-wrapper {
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .answer-input {
   flex: 1;
-  padding: 0.5rem 0.8rem;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
+  padding: 0.7rem 1rem;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
 }
 
 .answer-input:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .btn-submit {
-  padding: 0.5rem 1.5rem;
-  background: #667eea;
+  padding: 0.7rem 1.5rem;
+  background: #000;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.2s;
   min-width: 100px;
   font-size: 0.9rem;
 }
 
 .btn-submit:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  background: #222;
 }
 
 .btn-submit:disabled {
@@ -239,42 +247,44 @@
   margin-bottom: 0;
   box-shadow: none;
   border-bottom: none;
-  padding-bottom: 0;
 }
 
 .scores-section h3 {
-  color: #333;
+  color: #222;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .scores-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.8rem;
 }
 
 .score-item {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  padding: 0.5rem 0.8rem;
-  background: #f9f9f9;
+  justify-content: center;
+  padding: 0.8rem;
+  background: #fafafa;
   border-radius: 6px;
-  border-left: 4px solid #667eea;
-  font-size: 0.9rem;
+  border: 1px solid #d5d5d5;
+  font-size: 0.85rem;
 }
 
 .score-item span:first-child {
-  color: #333;
+  color: #666;
   font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
 .points {
-  color: #667eea;
+  color: #000;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .loading-screen {
@@ -282,45 +292,54 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #667eea;
-  color: white;
-  font-size: 1.5rem;
+  background: #fff;
+  color: #666;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .nordicos-dicen-game {
-    padding: 1rem;
+    padding: 0;
   }
 
   .game-header {
     flex-direction: column;
+    padding: 1rem;
+    text-align: center;
   }
 
   .game-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  .game-layout {
+    padding: 1rem;
   }
 
   .theme-section {
     padding: 1rem;
+    margin-bottom: 1rem;
   }
 
   .theme-question {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
   .boxes-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.8rem;
   }
 
   .answer-box {
     aspect-ratio: auto;
-    min-height: 90px;
+    min-height: 80px;
   }
 
   .input-wrapper {
     flex-direction: column;
+    gap: 0.6rem;
   }
 
   .btn-submit {
@@ -329,5 +348,24 @@
 
   .scores-list {
     grid-template-columns: 1fr;
+  }
+
+  .score-item {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  .points {
+    font-size: 1.1rem;
+  }
+
+  .answer-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .player-turn {
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
   }
 }

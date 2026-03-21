@@ -1,56 +1,46 @@
 .question-card {
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  border: 1px solid #d5d5d5;
   overflow: hidden;
-  animation: slideUp 0.4s ease-out;
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .card-header {
-  background: #2563eb;
+  background: #000;
   padding: 1.5rem;
   text-align: center;
+  border-bottom: 1px solid #d5d5d5;
 }
 
 .letter-display {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .card-body {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 .question {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .question h3 {
-  color: #667eea;
-  font-size: 0.9rem;
+  color: #666;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
 }
 
 .question p {
-  color: #333;
+  color: #222;
   font-size: 1.1rem;
   line-height: 1.6;
-  font-weight: 500;
+  font-weight: 600;
+  margin: 0;
 }
 
 .answer-input-section {
@@ -67,22 +57,22 @@
 
 .answer-input {
   flex: 1;
-  padding: 12px 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  padding: 0.8rem;
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: all 0.2s;
 }
 
 .answer-input:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 }
 
 .answer-input.listening {
-  border-color: #f59e0b;
-  background: #fffbeb;
+  border-color: #ffc700;
+  background: #fffaed;
 }
 
 .answer-input::placeholder {
@@ -95,43 +85,43 @@
 }
 
 .btn-voice {
-  padding: 10px 14px;
-  background: #2563eb;
+  padding: 0.8rem 1rem;
+  background: #000;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: all 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .btn-voice:hover:not(.listening) {
-  background: #1e40af;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: #222;
 }
 
 .btn-voice.listening {
-  background: #f59e0b;
+  background: #ffc700;
+  color: #000;
   animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+    box-shadow: 0 0 0 0 rgba(255, 199, 0, 0.7);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
+    box-shadow: 0 0 0 6px rgba(255, 199, 0, 0);
   }
 }
 
 .recognized-text {
   padding: 1rem;
-  background: #f0f9ff;
-  border-radius: 8px;
-  border-left: 4px solid #2563eb;
+  background: #f5f5f5;
+  border-radius: 6px;
+  border: 1px solid #d5d5d5;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -140,49 +130,46 @@
 
 .recognized-text p {
   margin: 0;
-  color: #333;
+  color: #222;
   font-size: 0.95rem;
 }
 
 .recognized-text strong {
-  color: #2563eb;
+  color: #000;
   font-weight: 700;
 }
 
 .btn-clear {
-  padding: 6px 12px;
-  background: #ef4444;
+  padding: 0.5rem 1rem;
+  background: #999;
   color: white;
   border: none;
   border-radius: 6px;
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s;
   white-space: nowrap;
 }
 
 .btn-clear:hover {
-  background: #dc2626;
+  background: #666;
 }
-
-
 
 .button-group {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 0.8rem;
 }
 
 .btn {
-  padding: 12px 16px;
-  font-size: 1rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  transition: all 0.2s;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-size: 0.9rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -197,19 +184,18 @@
 }
 
 .btn-submit {
-  background: #2563eb;
+  background: #000;
   color: white;
 }
 
 .btn-submit:not(:disabled):hover {
-  background: #1e40af;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  background: #222;
 }
 
 .btn-pass {
   width: 100%;
-  background: #f59e0b;
-  color: white;
+  background: #ffc700;
+  color: #000;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -218,25 +204,24 @@
 }
 
 .btn-pass:hover {
-  background: #d97706;
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  background: #ffb300;
 }
 
 .answer-feedback {
-  padding: 2rem;
-  border-radius: 8px;
+  padding: 1.5rem;
+  border-radius: 6px;
   text-align: center;
-  animation: slideUp 0.4s ease-out;
+  border: 1px solid #d5d5d5;
 }
 
 .answer-feedback.correct {
-  background: #d1fae5;
-  border: 2px solid #10b981;
+  background: #f0fdf4;
+  border-color: #d5d5d5;
 }
 
 .answer-feedback.incorrect {
-  background: #fee2e2;
-  border: 2px solid #ef4444;
+  background: #fef2f2;
+  border-color: #d5d5d5;
 }
 
 .feedback-text {
@@ -246,20 +231,21 @@
 }
 
 .answer-feedback.correct .feedback-text {
-  color: #059669;
+  color: #000;
 }
 
 .answer-feedback.incorrect .feedback-text {
-  color: #dc2626;
+  color: #666;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .card-body {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .letter-display {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .question p {
@@ -268,28 +254,40 @@
 
   .button-group {
     grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
   .input-wrapper {
     flex-direction: row;
+    gap: 0.4rem;
   }
 
   .answer-input {
-    font-size: 1rem;
-    padding: 10px 12px;
+    font-size: 0.9rem;
+    padding: 0.7rem;
   }
 
   .btn-voice {
-    padding: 10px 12px;
-    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
   }
 
   .recognized-text {
     flex-direction: column;
     align-items: flex-start;
+    padding: 0.8rem;
   }
 
   .btn-clear {
     align-self: flex-end;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .answer-feedback {
+    padding: 1rem;
+  }
+
+  .feedback-text {
+    font-size: 1rem;
   }
 }

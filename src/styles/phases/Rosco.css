@@ -2,16 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .rosco {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  background: #fafafa;
+  border: 1px solid #d5d5d5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,108 +19,84 @@
 
 .rosco-letter {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.2s ease;
-  box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.2s;
+  border: 1px solid #d5d5d5;
+  background: #fff;
+  color: #666;
 }
 
-.rosco-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-
-.rosco {
-  position: relative;
-  width: 380px;
-  height: 380px;
-  border-radius: 50%;
-  background: #f3f4f6;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #e5e5e5;
-}
-
-/* Estados del rosco */
+/* States */
 .rosco-letter.pending {
-  background: #e5e7eb;
-  color: #6b7280;
+  background: #f5f5f5;
+  color: #666;
+  border-color: #d5d5d5;
 }
 
 .rosco-letter.correct {
-  background: #10b981;
+  background: #000;
   color: white;
-  box-shadow: none;
+  border-color: #000;
 }
 
 .rosco-letter.incorrect {
-  background: #ef4444;
+  background: #999;
   color: white;
-  box-shadow: none;
+  border-color: #999;
 }
 
 .rosco-letter.current:not(.correct):not(.incorrect) {
-  background: #f59e0b;
-  color: white;
-  animation: none;
-  box-shadow: none;
-  transform: scale(1.1);
+  background: #ffc700;
+  color: #000;
+  border-color: #ffc700;
+  transform: scale(1.08);
 }
 
 .letter {
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 .rosco-center {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #d5d5d5;
 }
 
 .center-indicator {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #2563eb;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #000;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .rosco-container {
+    padding: 0.5rem;
+  }
+
   .rosco {
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
   }
 
   .rosco-letter {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-    transform-origin: center;
-  }
-
-  .rosco-letter[style*="translateY"] {
-    /* Esto es manejado en línea en el componente */
-  }
-
-  .rosco-container {
-    padding: 1rem;
+    width: 42px;
+    height: 42px;
+    font-size: 0.9rem;
   }
 
   .rosco-center {
@@ -129,6 +105,28 @@
   }
 
   .center-indicator {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rosco {
+    width: 200px;
+    height: 200px;
+  }
+
+  .rosco-letter {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+
+  .rosco-center {
+    width: 50px;
+    height: 50px;
+  }
+
+  .center-indicator {
+    font-size: 1.2rem;
   }
 }

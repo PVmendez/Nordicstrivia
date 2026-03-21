@@ -3,7 +3,7 @@ import { useTournament } from '../../context/TournamentContext';
 import { whoSaidThis } from '../../data/mockData';
 import { createGame, playerPressed, listenToGame, uploadPlayersToFirebase, getPlayersFromFirebase, updateGameQuestion, updatePlayerScore } from '../../firebase.config';
 import PhaseResultScreen from './PhaseResultScreen';
-import { FaHandPaper, FaCheck, FaTimes } from 'react-icons/fa';
+import { FaHandPaper, FaCheck, FaTimes, FaShare, FaCopy, FaExclamationCircle, FaCheckCircle, FaHourglassEnd, FaTrophy } from 'react-icons/fa';
 import '../../styles/phases/BuzzerGame.css';
 
 const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
@@ -242,7 +242,7 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
       return (
         <div className="player-view">
           <div className="error-message">
-            <h2>❌ Jugador no encontrado</h2>
+            <h2><FaExclamationCircle /> Jugador no encontrado</h2>
             <p>El nombre "{currentPlayerName}" no existe en la lista</p>
             <a href={window.location.pathname}>← Volver</a>
           </div>
@@ -254,7 +254,7 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
       return (
         <div className="player-view">
           <div className="game-finished-message">
-            <h1>🎉 ¡Juego Finalizado!</h1>
+            <h1><FaTrophy /> Juego Finalizado!</h1>
             <p>Tu puntuación: <strong>{gameData?.players[currentPlayer.id]?.score || playerScores[currentPlayer.id] || 0} puntos</strong></p>
             <a href={window.location.pathname}>← Volver</a>
           </div>
@@ -285,15 +285,19 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
           <div className="player-status">
             {isPlayerBlocked ? (
               <div className="status-blocked">
-                ❌ ¡Erraste! No puedes responder esta frase
+                <FaExclamationCircle /> Erraste! No puedes responder
               </div>
             ) : playerPressed ? (
-              <div className="status-pressed">
-                ✅ ¡Respondiste!
-                {winner?.id === currentPlayer.id && <div className="status-winner">🏆 ¡Fuiste el primero!</div>}
-              </div>
+              <>
+                <div className="status-pressed">
+                  <FaCheckCircle /> Respondiste!
+                </div>
+                {winner?.id === currentPlayer.id && (
+                  <div className="status-winner"><FaTrophy /> ¡Fuiste el primero!</div>
+                )}
+              </>
             ) : !winner ? (
-              <div className="status-waiting">⏳ Esperando las respuestas...</div>
+              <div className="status-waiting"><FaHourglassEnd /> Esperando respuestas...</div>
             ) : (
               <div className="status-other">Otro jugador respondió primero</div>
             )}
@@ -304,7 +308,13 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
             onClick={() => handlePlayerPressed(currentPlayer.id)}
             disabled={playerPressed || !!winner || isPlayerBlocked}
           >
-            {isPlayerBlocked ? '❌ BLOQUEADO' : playerPressed ? '✅ RESPONDISTE' : '👋 RESPONDER'}
+            {isPlayerBlocked ? (
+              <><FaExclamationCircle /> BLOQUEADO</>
+            ) : playerPressed ? (
+              <><FaCheckCircle /> RESPONDISTE</>
+            ) : (
+              <><FaHandPaper /> RESPONDER</>
+            )}
           </button>
 
           <div className="player-score">
@@ -359,26 +369,30 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
       {showLinkModal && (
         <div className="modal-overlay" onClick={() => setShowLinkModal(false)}>
           <div className="modal-content" onClick={e => e.stopPropagation()}>
-            <h2>📲 Links para Jugadores</h2>
+            <h2><FaShare /> Links para Jugadores</h2>
             <p className="modal-instruction">Copia y pega cada link en WhatsApp para que los jugadores entren:</p>
             
             <div className="links-container">
               {gamePlayers.map((player, idx) => (
                 <div key={player.id} className="link-item">
-                  <div className="link-number">{idx + 1}</div>
-                  <div className="link-text">{player.name}</div>
-                  <input
-                    type="text"
-                    readOnly
-                    value={getPlayerLink(player.name)}
-                    className="link-input"
-                  />
-                  <button
-                    className="btn-copy"
-                    onClick={() => copyToClipboard(getPlayerLink(player.name))}
-                  >
-                    📋 Copiar
-                  </button>
+                  <div>
+                    <div className="link-number">{idx + 1}</div>
+                    <div className="link-text">{player.name}</div>
+                  </div>
+                  <div className="link-input-wrapper">
+                    <input
+                      type="text"
+                      readOnly
+                      value={getPlayerLink(player.name)}
+                      className="link-input"
+                    />
+                    <button
+                      className="btn-copy"
+                      onClick={() => copyToClipboard(getPlayerLink(player.name))}
+                    >
+                      <FaCopy /> Copiar
+                    </button>
+                  </div>
                 </div>
               ))}
             </div>
@@ -394,7 +408,7 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
       )}
 
       <div className="game-header">
-        <h1><FaHandPaper /> ¿QUIÉN DIJO ESTO? - Fase 3</h1>
+        <h1><FaHandPaper /> QUIEN DIJO ESTO? - Fase 3</h1>
         <div className="quote-counter">
           Quote {currentQuoteIndex + 1} of {whoSaidThis.length}
         </div>
@@ -402,7 +416,7 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
           className="btn-share-links"
           onClick={handleShareLinks}
         >
-          📲 Compartir Links
+          <FaShare /> Compartir Links
         </button>
       </div>
 

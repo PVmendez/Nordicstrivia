@@ -1,41 +1,31 @@
 .global-scoreboard {
   width: 100%;
-  padding: 1.5rem 0;
-  animation: slideDown 0.4s ease-out;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding: 1rem 0;
 }
 
 .scoreboard-container {
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  border: 1px solid #d5d5d5;
   overflow: hidden;
 }
 
 .scoreboard-header {
-  background: #2563eb;
-  padding: 1.5rem;
+  background: #000;
+  padding: 1.2rem;
   text-align: center;
   color: white;
+  border-bottom: 1px solid #d5d5d5;
 }
 
 .scoreboard-header h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.7rem;
+  font-weight: 700;
 }
 
 .scoreboard-table {
@@ -44,13 +34,14 @@
 
 .table-head {
   display: grid;
-  grid-template-columns: 50px 1fr 80px 80px 80px 100px;
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: 40px 1fr 70px 70px 70px 90px;
+  gap: 0.8rem;
+  padding: 0.8rem;
   background: #f5f5f5;
-  border-bottom: 3px solid #ddd;
+  border-bottom: 1px solid #d5d5d5;
   font-weight: 700;
-  color: #333;
+  color: #222;
+  font-size: 0.85rem;
 }
 
 .col {
@@ -75,36 +66,38 @@
 
 .table-row {
   display: grid;
-  grid-template-columns: 50px 1fr 80px 80px 80px 100px;
-  gap: 1rem;
-  padding: 1.2rem 1rem;
+  grid-template-columns: 40px 1fr 70px 70px 70px 90px;
+  gap: 0.8rem;
+  padding: 0.8rem;
   border-bottom: 1px solid #f0f0f0;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: background 0.2s;
+  font-size: 0.9rem;
 }
 
 .table-row:hover {
-  background: #f9f9f9;
+  background: #fafafa;
 }
 
 .table-row.position-1 {
-  background: #fef3c7;
+  background: #fffaed;
 }
 
 .table-row.position-2 {
-  background: #f3f4f6;
+  background: #f5f5f5;
 }
 
 .table-row.position-3 {
-  background: #fed7aa;
+  background: #ffe8d6;
 }
 
 .position-badge {
-  display: inline-block;
-  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
   font-weight: 700;
-  text-align: center;
-  width: 40px;
+  width: 35px;
 }
 
 .position-badge .medal {
@@ -114,77 +107,82 @@
 }
 
 .medal.gold {
-  color: #f59e0b;
-  font-size: 1.8rem;
+  color: #ffc700;
+  font-size: 1.5rem;
 }
 
 .medal.silver {
-  color: #9ca3af;
-  font-size: 1.8rem;
+  color: #c0c0c0;
+  font-size: 1.5rem;
 }
 
 .medal.bronze {
-  color: #d97706;
-  font-size: 1.8rem;
+  color: #cd7f32;
+  font-size: 1.5rem;
 }
 
 .player-name {
   font-weight: 600;
-  color: #333;
+  color: #222;
   text-align: left;
 }
 
 .has-score {
-  color: #2563eb;
+  color: #222;
   font-weight: 700;
 }
 
 .total-score {
-  font-size: 1.2rem;
-  font-weight: 800;
-  color: #2563eb;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
 }
 
-/* Modo compacto para la pantalla de fases */
+/* Compact mode for phase screens */
 .global-scoreboard.compact {
   padding: 0;
 }
 
 .global-scoreboard.compact .scoreboard-header {
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 .global-scoreboard.compact .scoreboard-header h2 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .global-scoreboard.compact .table-head {
-  grid-template-columns: 40px 1fr 70px;
-  padding: 0.8rem;
-  font-size: 0.9rem;
+  grid-template-columns: 35px 1fr 60px;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  gap: 0.6rem;
 }
 
 .global-scoreboard.compact .table-row {
-  grid-template-columns: 40px 1fr 70px;
-  padding: 0.8rem;
-  font-size: 0.9rem;
+  grid-template-columns: 35px 1fr 60px;
+  padding: 0.6rem;
+  font-size: 0.85rem;
+  gap: 0.6rem;
 }
 
 .global-scoreboard.compact .col-phase {
   display: none;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .table-head {
-    grid-template-columns: 40px 1fr 60px 60px 60px 80px;
-    font-size: 0.85rem;
+    grid-template-columns: 35px 1fr 55px 55px 55px 70px;
+    font-size: 0.75rem;
     gap: 0.5rem;
+    padding: 0.6rem;
   }
 
   .table-row {
-    grid-template-columns: 40px 1fr 60px 60px 60px 80px;
+    grid-template-columns: 35px 1fr 55px 55px 55px 70px;
     gap: 0.5rem;
-    padding: 0.8rem 0.5rem;
+    padding: 0.6rem;
+    font-size: 0.8rem;
   }
 
   .col,
@@ -196,6 +194,46 @@
   }
 
   .scoreboard-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .position-badge {
+    width: 30px;
+    font-size: 1.1rem;
+  }
+
+  .medal.gold,
+  .medal.silver,
+  .medal.bronze {
     font-size: 1.2rem;
+  }
+
+  .total-score {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-head {
+    grid-template-columns: 30px 1fr 50px;
+    font-size: 0.7rem;
+    gap: 0.3rem;
+  }
+
+  .table-row {
+    grid-template-columns: 30px 1fr 50px;
+    gap: 0.3rem;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .col-phase,
+  .col-position {
+    display: none;
+  }
+
+  .position-badge {
+    width: 25px;
+    font-size: 0.95rem;
   }
 }
