@@ -1,18 +1,18 @@
-# 🏆 Nordic Trivia Tournament
+# Nordic Trivia Tournament
 
 Una aplicación React para gestionar un torneo de trivia con tu grupo de amigos. ¡Sin backend, todo funciona en local!
 
-## 🎮 Características
+## Características
 
-- ✅ **Múltiples Fases**: Arquitectura escalable para agregar nuevas fases
-- ✅ **Sistema de Puntuación Global**: Acumula puntos a través de todas las fases
-- ✅ **Fase 1: Pasapalabras Completa**: Juego del Rosco A-Z listo para jugar
-- ✅ **Tabla General de Puntos**: Ranking actualizado en tiempo real
-- ✅ **Datos Mock Incluidos**: 26 preguntas sobre un grupo de amigos ficticio
-- ✅ **100% Frontend**: Sin backend, sin base de datos
-- ✅ **Diseño Responsive**: Funciona en desktop y mobile
+- **Múltiples Fases**: Arquitectura escalable para agregar nuevas fases
+- **Sistema de Puntuación Global**: Acumula puntos a través de todas las fases
+- **Fase 1: Pasapalabras Completa**: Juego del Rosco A-Z listo para jugar
+- **Tabla General de Puntos**: Ranking actualizado en tiempo real
+- **Datos Mock Incluidos**: 26 preguntas sobre un grupo de amigos ficticio
+- **100% Frontend**: Sin backend, sin base de datos
+- **Diseño Responsive**: Funciona en desktop y mobile
 
-## 🚀 Cómo Empezar
+## Cómo Empezar
 
 ### Instalación
 
@@ -32,7 +32,7 @@ La aplicación se abrirá en `http://localhost:3000`
 npm run build
 ```
 
-## 📋 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 NordicTrivia/
@@ -73,7 +73,7 @@ NordicTrivia/
 └── README.md
 ```
 
-## 🎮 Cómo Jugar
+## Cómo Jugar
 
 ### 1. **Configuración de Jugadores**
    - Ingresa los nombres de los participantes
@@ -96,7 +96,7 @@ NordicTrivia/
    - Ranking completo con medallas
    - Opción para iniciar un nuevo torneo
 
-## 📊 Sistema de Puntuación
+## Sistema de Puntuación
 
 ```
 Pasapalabras:
@@ -107,7 +107,7 @@ Pasapalabras:
 Total de Fase 1: hasta 270 puntos (26 * 10 + 20 bonus)
 ```
 
-## 🎨 Personalización
+## Personalización
 
 ### Cambiar Preguntas del Pasapalabras
 
@@ -130,13 +130,13 @@ export const pasapalabrasData = [
 2. Actualiza `PhaseManager.js` para agregar la fase
 3. El contexto de torneo maneja automáticamente la puntuación
 
-## 🌟 Características Bonus
+## Características Bonus
 
-- ✨ **Animaciones CSS**: Transiciones suaves entre pantallas
-- 🎨 **Diseño Moderno**: Gradientes, sombras y efectos visuales
-- 📱 **Responsive Design**: Funciona perfectamente en móviles
-- 🏆 **Sistema de Pódium**: Visualización impresionante del ganador
-- 💾 **Datos en Memoria**: Los puntos persisten mientras la app está abierta
+- **Animaciones CSS**: Transiciones suaves entre pantallas
+- **Diseño Moderno**: Gradientes, sombras y efectos visuales
+- **Responsive Design**: Funciona perfectamente en móviles
+- **Sistema de Pódium**: Visualización impresionante del ganador
+- **Datos en Memoria**: Los puntos persisten mientras la app está abierta
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -145,28 +145,28 @@ export const pasapalabrasData = [
 - **Context API** para estado global
 - **JavaScript ES6+**
 
-## 📱 Responsividad
+## Responsividad
 
 La aplicación está completamente optimizada para:
-- 🖥️ Desktop (1024px+)
-- 📱 Tablet (768px - 1023px)
-- 📱 Mobile (< 768px)
+- Desktop (1024px+)
+- Tablet (768px - 1023px)
+- Mobile (< 768px)
 
-## ⚡ Próximas Fases (Preparadas)
+## Próximas Fases (Preparadas)
 
 El sistema está listo para agregar:
 - Fase 2: Preguntas de Opción Múltiple
 - Fase 3: Trivia en Tiempo Real
 - Fase 4: Batalla de Equipos
 
-## 🤝 Contribuciones
+## Contribuciones
 
 ¿Quieres agregar más preguntas o fases? ¡Edita los archivos directamente!
 
-## 📝 Licencia
+## Licencia
 
-Libre para usar y modificar. ¡Hecho con ❤️ para tu grupo de amigos!
+Libre para usar y modificar. ¡Hecho con amor para tu grupo de amigos!
 
-## 🎉 ¡A Divertirse!
+## ¡A Divertirse!
 
-Descarga, personaliza y juega con tus amigos. Que gane el mejor trivia conocedor. 🏆
+Descarga, personaliza y juega con tus amigos. Que gane el mejor trivia conocedor.
