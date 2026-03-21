@@ -6,7 +6,7 @@ import BuzzerGame from './phases/BuzzerGame';
 import ZoomGuessGame from './phases/ZoomGuessGame';
 import TeamSetup from './TeamSetup';
 import GlobalScoreBoard from './GlobalScoreBoard';
-import { FaListUl, FaMicrophone, FaLock, FaCheckCircle, FaHandPaper, FaImage } from 'react-icons/fa';
+import { FaListUl, FaMicrophone, FaCheckCircle, FaHandPaper, FaImage } from 'react-icons/fa';
 import '../styles/PhaseManager.css';
 
 const PhaseManager = () => {

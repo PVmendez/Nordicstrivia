@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTournament } from '../../context/TournamentContext';
 import { zoomGuessImages } from '../../data/mockData';
-import { createGame, playerPressed, listenToGame, uploadPlayersToFirebase, getPlayersFromFirebase, updateGameQuestion, updatePlayerScore, resetGameStateForNextLevel } from '../../firebase.config';
+import { createGame, playerPressed, listenToGame, uploadPlayersToFirebase, getPlayersFromFirebase, updatePlayerScore, resetGameStateForNextLevel } from '../../firebase.config';
 import PhaseResultScreen from './PhaseResultScreen';
 import { FaHandPaper, FaCheck, FaTimes, FaShare, FaCopy, FaExclamationCircle, FaCheckCircle, FaHourglassEnd, FaTrophy, FaImage } from 'react-icons/fa';
 import '../../styles/phases/ZoomGuessGame.css';
@@ -35,8 +35,7 @@ const ZoomGuessGame = ({ players, onPhaseComplete, sessionId }) => {
     return params.get('player');
   });
 
-  // Parámetro game es solo informativo, no restrictivo
-  const [gameValidationError] = useState(null);
+
 
   const isAdmin = !currentPlayerName;
   const [showLinkModal, setShowLinkModal] = useState(false);
@@ -259,10 +258,7 @@ const ZoomGuessGame = ({ players, onPhaseComplete, sessionId }) => {
     }
   };
 
-  const skipLevel = async () => {
-    console.log(`⏭️ Saltando nivel ${currentZoomLevel}`);
-    await advanceZoomLevel();
-  };
+
 
   const getPlayerLink = (playerName) => {
     if (!sessionIdState) return '';

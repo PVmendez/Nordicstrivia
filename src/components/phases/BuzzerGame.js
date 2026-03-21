@@ -34,8 +34,7 @@ const BuzzerGame = ({ players, onPhaseComplete, sessionId }) => {
     return params.get('player');
   });
 
-  // Parámetro game es solo informativo, no restrictivo
-  const [gameValidationError] = useState(null);
+
 
   const isAdmin = !currentPlayerName;
   const [showLinkModal, setShowLinkModal] = useState(false);
