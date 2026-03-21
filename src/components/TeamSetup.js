@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaUsers, FaCheck, FaRandom } from 'react-icons/fa';
+import { FaUsers, FaRandom } from 'react-icons/fa';
 import { createRandomTeams } from '../data/mockData';
 import '../styles/TeamSetup.css';
 

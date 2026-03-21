@@ -8,7 +8,7 @@ import { FaSignOutAlt } from 'react-icons/fa';
 import '../styles/TournamentApp.css';
 
 const TournamentApp = () => {
-  const { playersAdded, tournamentFinished, resetTournament, players } = useTournament();
+  const { playersAdded, tournamentFinished, resetTournament } = useTournament();
   const [isPlayerView, setIsPlayerView] = useState(false);
   const [storedPlayers, setStoredPlayers] = useState([]);
   const [sessionId, setSessionId] = useState(null);
