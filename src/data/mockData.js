@@ -740,32 +740,32 @@ export const zoomGuessImages = [
   },
   {
     id: 16,
-    fileName: "IMG-20220226_002149.jpg",
+    fileName: "IMG_20220226_002149.jpg",
     hint: "Imagen 16"
   },
   {
     id: 17,
-    fileName: "IMG-20221106_001612.jpg",
+    fileName: "IMG_20221106_001612.jpg",
     hint: "Imagen 17"
   },
   {
     id: 18,
-    fileName: "IMG-20221218_195203.jpg",
+    fileName: "IMG_20221218_195203.jpg",
     hint: "Imagen 18"
   },
   {
     id: 19,
-    fileName: "IMG-20230511_222612.jpg",
+    fileName: "IMG_20230511_222612.jpg",
     hint: "Imagen 19"
   },
   {
     id: 20,
-    fileName: "IMG-20230619_111822.jpg",
+    fileName: "IMG_20230619_111822.jpg",
     hint: "Imagen 20"
   },
   {
     id: 21,
-    fileName: "IMG-20250125_080111.jpg",
+    fileName: "IMG_20250125_080111.jpg",
     hint: "Imagen 21"
   },
   {

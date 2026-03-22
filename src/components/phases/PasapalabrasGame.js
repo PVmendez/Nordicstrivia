@@ -46,7 +46,7 @@ const PasapalabrasGame = ({ teams, players, onPhaseComplete }) => {
     const patternLettersPerTeam = {};
     const currentLetterIndexPerTeam = {};
     const teamTimers = {};
-    const INITIAL_TIME = 180;
+    const INITIAL_TIME = 400; // 6 minutos
     
     if (gameTeams && Array.isArray(gameTeams)) {
       gameTeams.forEach((team, index) => {
